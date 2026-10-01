@@ -362,7 +362,10 @@ export default function Home() {
       </section>
 
       {/* PRICING */}
-      <section className='relative z-10 pb-28 max-w-5xl mx-auto px-6'>
+      <section
+        id='pricing'
+        className='relative z-10 pb-28 max-w-5xl mx-auto px-6 scroll-mt-20'
+      >
         <div className='text-center mb-16'>
           <SectionLabel>Pricing</SectionLabel>
           <SectionHeading
