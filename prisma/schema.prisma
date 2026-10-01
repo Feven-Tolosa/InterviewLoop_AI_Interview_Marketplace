@@ -71,6 +71,10 @@ model User {
   currentPlan            String    @default("free")
   creditsLastAllocatedAt DateTime?
 
+  // stripe billing
+  stripeCustomerId     String? @unique
+  stripeSubscriptionId String?
+
   // interviewer-only
   bio           String?
   title         String?
@@ -164,16 +168,20 @@ model Feedback {
 }
 
 // ─── CREDIT TRANSACTIONS ─────────────────────────────────
+// CreditTransaction also doubles as the Stripe webhook's idempotency ledger:
+// `stripeInvoiceId` is unique, so a retried `invoice.paid` event can never
+// grant the same month's credits twice.
 
 model CreditTransaction {
-  id        String          @id @default(uuid())
-  userId    String
-  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  amount    Int
-  type      TransactionType
-  bookingId String?
-  booking   Booking?        @relation(fields: [bookingId], references: [id])
-  createdAt DateTime        @default(now())
+  id             String          @id @default(uuid())
+  userId         String
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount         Int
+  type           TransactionType
+  bookingId      String?
+  booking        Booking?        @relation(fields: [bookingId], references: [id])
+  stripeInvoiceId String?        @unique
+  createdAt      DateTime        @default(now())
 }
 
 // ─── PAYOUTS ─────────────────────────────────────────────

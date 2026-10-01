@@ -1,31 +1,44 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
-import { CheckoutButton } from "@clerk/nextjs/experimental";
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton, useAuth } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { PLANS } from "@/lib/data";
+import useMyPlan from "@/hooks/use-plan";
+import useFetch from "@/hooks/use-fetch";
+import {
+  getBillingPortalSession,
+  startCheckout,
+} from "@/actions/stripe";
 
 export default function PricingSection() {
-  const { has, userId } = useAuth();
+  const { userId } = useAuth();
+  const { plan: activePlan, loading: loadingPlan } = useMyPlan();
+  const { fn: checkout, loading: checkingOut } = useFetch(startCheckout);
+  const { fn: openPortal, loading: openingPortal } = useFetch(
+    getBillingPortalSession,
+  );
 
   const isSignedIn = !!userId;
-  const isOnStarter = isSignedIn && has({ plan: "starter" });
-  const isOnPro = isSignedIn && has({ plan: "pro" });
-  const isOnFree = isSignedIn && !isOnStarter && !isOnPro;
+  const isSubscribed = isSignedIn && !!activePlan && activePlan !== "free";
 
-  const activePlanSlug = isOnPro
-    ? "pro"
-    : isOnStarter
-    ? "starter"
-    : isOnFree
-    ? "free"
-    : null;
+  // Stripe hosts the checkout page, so all we do is create the session and
+  // send the browser to the URL it returns.
+  const handleCheckout = async (priceId) => {
+    if (!priceId) return;
+    const { url } = await checkout(priceId);
+    if (url) window.location.assign(url);
+  };
+
+  const handlePortal = async () => {
+    const { url } = await openPortal();
+    if (url) window.location.assign(url);
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {PLANS.map((plan) => {
-        const isActive = activePlanSlug === plan.slug;
+        const isActive = isSignedIn && activePlan === plan.slug;
+        const busy = loadingPlan || checkingOut || openingPortal;
 
         return (
           <div
@@ -80,7 +93,7 @@ export default function PricingSection() {
 
             {/* CTA */}
             {isActive ? (
-              // Already on this plan
+              // Already paying for this plan
               <Button
                 variant={plan.featured ? "gold" : "default"}
                 disabled
@@ -88,8 +101,8 @@ export default function PricingSection() {
               >
                 ✓ Current plan
               </Button>
-            ) : plan.planId === null ? (
-              // Free plan — no checkout needed
+            ) : plan.slug === "free" ? (
+              // Free plan — nothing to pay for
               isSignedIn ? (
                 <Button
                   variant="outline"
@@ -106,30 +119,40 @@ export default function PricingSection() {
                 </SignInButton>
               )
             ) : isSignedIn ? (
-              <CheckoutButton
-                planId={plan.planId}
-                planPeriod="month"
-                checkoutProps={{
-                  appearance: {
-                    elements: {
-                      drawerRoot: {
-                        zIndex: 2000,
-                      },
-                    },
-                  },
-                }}
-              >
+              <>
                 <Button
                   variant={plan.featured ? "gold" : "outline"}
                   className="w-full"
+                  disabled={busy || !plan.priceId}
+                  onClick={() => handleCheckout(plan.priceId)}
                 >
-                  {activePlanSlug === "pro" && plan.slug === "starter"
-                    ? "Downgrade"
-                    : activePlanSlug === "starter" && plan.slug === "pro"
-                    ? "Upgrade →"
+                  {checkingOut
+                    ? "Redirecting…"
+                    : isSubscribed
+                    ? `Switch to ${plan.name} →`
                     : "Get started →"}
                 </Button>
-              </CheckoutButton>
+
+                {/* Price id missing — Stripe has no price to charge */}
+                {!plan.priceId && (
+                  <p className="text-xs text-muted-foreground mt-2 text-center">
+                    Temporarily unavailable
+                  </p>
+                )}
+
+                {/* Subscribers manage or cancel in Stripe's billing portal */}
+                {isSubscribed && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full mt-2 text-muted-foreground"
+                    disabled={busy}
+                    onClick={handlePortal}
+                  >
+                    {openingPortal ? "Opening…" : "Manage billing / cancel"}
+                  </Button>
+                )}
+              </>
             ) : (
               // Paid plan, signed out → sign in first
               <SignInButton mode="modal">
