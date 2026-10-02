@@ -187,8 +187,7 @@ export default function Footer() {
 
           <div className='flex items-center gap-3'>
             <span className='text-muted-foreground font-medium'>
-              Crafted with ❤️ by{' '}
-              <strong className='text-amber-400'>DaveOnTrack</strong>
+              Crafted with ❤️
             </span>
           </div>
         </div>
