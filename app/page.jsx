@@ -152,7 +152,7 @@ export default function Home() {
                       2,400+ engineers
                     </span>
                     <span className='text-[11px] text-muted-foreground'>
-                      cracked FAANG via EVKA
+                      cracked FAANG via InterviewLoop
                     </span>
                   </div>
                   <div className='w-px h-8 bg-accent' />
@@ -411,7 +411,7 @@ export default function Home() {
                 <span className='relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400' />
               </span>
               <span className='text-[11px] text-muted-foreground font-medium'>
-                Join 2,400+ engineers already on EVKA
+                Join 2,400+ engineers already on InterviewLoop
               </span>
             </div>
 

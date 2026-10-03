@@ -42,7 +42,7 @@ export default function Footer() {
           {/* COL 1: Brand & Status */}
           <div className='lg:col-span-2 flex flex-col gap-5'>
             <Link href='/' className='flex items-center gap-2'>
-              <img src='/logo.png' alt='EVKA Logo' className='h-8 w-auto' />
+              <img src='/logo.png' alt='InterviewLoop Logo' className='h-8 w-auto' />
             </Link>
 
             <p className='text-xs text-muted-foreground font-light leading-relaxed max-w-sm'>
@@ -162,7 +162,7 @@ export default function Footer() {
         <div className='pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground font-light'>
           <div className='flex items-center gap-2'>
             <span>
-              © {new Date().getFullYear()} EVKA. Built with Next.js, Supabase,
+              © {new Date().getFullYear()} InterviewLoop. Built with Next.js, Supabase,
               Stream &amp; Gemini AI.
             </span>
           </div>

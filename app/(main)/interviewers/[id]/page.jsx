@@ -137,7 +137,7 @@ export default async function InterviewerProfilePage({ params }) {
             <div>
               <SectionLabel>What to expect</SectionLabel>
               <p className='text-sm text-muted-foreground font-light mt-1'>
-                Every session on EVKA includes the following.
+                Every session on InterviewLoop includes the following.
               </p>
             </div>
             <ul className='flex flex-col gap-5'>
