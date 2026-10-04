@@ -1,11 +1,11 @@
 {
-  "name": "prept",
+  "name": "interviewloop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
+    "dev": "node api.js && next dev",
+    "build": "node api.js && prisma generate && next build",
+    "start": "node api.js && next start",
     "lint": "eslint",
     "stripe:setup": "node --env-file=.env scripts/setup-stripe.js"
   },
