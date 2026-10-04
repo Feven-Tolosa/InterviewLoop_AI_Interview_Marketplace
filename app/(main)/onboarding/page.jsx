@@ -74,7 +74,7 @@ export default function OnboardingPage() {
           <h1 className='font-serif text-5xl leading-tight tracking-tighter mt-1'>
             <GrayTitle>How will you be</GrayTitle>
             <br />
-            <GoldTitle>using EVKA?</GoldTitle>
+            <GoldTitle>using InterviewLoop?</GoldTitle>
           </h1>
           <p className='text-sm text-muted-foreground font-light mt-4 leading-relaxed'>
             This helps us personalise your experience.

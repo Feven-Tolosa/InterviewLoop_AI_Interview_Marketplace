@@ -22,8 +22,9 @@ const dmSans = DM_Sans({
 })
 
 export const metadata = {
-  title: 'EVKA',
-  description: '',
+  title: 'InterviewLoop — AI Interview Marketplace',
+  description:
+    'Practice mock interviews with expert interviewers over HD video calls and get AI-powered feedback after every session.',
 }
 
 export default function RootLayout({ children }) {
