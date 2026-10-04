@@ -22,7 +22,7 @@ const Header = async () => {
       <Link href='/'>
         <Image
           src='/logo.png'
-          alt='EVKA Logo'
+          alt='InterviewLoop Logo'
           width={100}
           height={100}
           className='h-11 w-auto mt-1'
