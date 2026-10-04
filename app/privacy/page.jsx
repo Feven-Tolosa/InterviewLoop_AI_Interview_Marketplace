@@ -11,9 +11,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Privacy Policy | EVKA',
+  title: 'Privacy Policy | InterviewLoop',
   description:
-    'Learn how EVKA collects, uses, protects, and retains your personal information when using our AI-powered mock interview platform.',
+    'Learn how InterviewLoop collects, uses, protects, and retains your personal information when using our AI-powered mock interview platform.',
 }
 
 export default function PrivacyPolicyPage() {
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              When you use EVKA, we collect information to provide, maintain,
+              When you use InterviewLoop, we collect information to provide, maintain,
               and improve our mock interview marketplace and AI services:
             </p>
             <ul className='list-none space-y-3 pl-4'>
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              EVKA integrates with trusted third-party providers to power
+              InterviewLoop integrates with trusted third-party providers to power
               essential infrastructure. These services process data according to
               their own privacy policies:
             </p>
@@ -319,7 +319,7 @@ export default function PrivacyPolicyPage() {
                 <span className='w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0' />
                 <span>
                   <strong className='text-foreground'>Account Profiles:</strong>{' '}
-                  Maintained while your account remains active on EVKA.
+                  Maintained while your account remains active on InterviewLoop.
                 </span>
               </li>
               <li className='flex items-start gap-3'>
@@ -408,7 +408,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              EVKA uses essential cookies and local storage to keep your session
+              InterviewLoop uses essential cookies and local storage to keep your session
               secure and remember interface preferences:
             </p>
             <ul className='list-none space-y-3 pl-4'>
