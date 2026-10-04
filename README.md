@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🎯 EVKA — AI Interview Marketplace
+# 🎯 InterviewLoop — AI Interview Marketplace
 
 **Practice interviews with real experts. Get AI-powered feedback after every session.**
 
 </div>
 
-EVKA is a full-stack interview marketplace that connects **candidates** with **professional interviewers** over HD video calls. Sessions are analyzed by **Google Gemini**, which generates a detailed feedback report — technical, communication and problem-solving scores, strengths, improvements, concepts covered, and a question-by-question breakdown.
+InterviewLoop is a full-stack interview marketplace that connects **candidates** with **professional interviewers** over HD video calls. Sessions are analyzed by **Google Gemini**, which generates a detailed feedback report — technical, communication and problem-solving scores, strengths, improvements, concepts covered, and a question-by-question breakdown.
 
 ---
 
@@ -99,7 +99,7 @@ ADMIN_PAYOUT_PASSWORD=change-me
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-> ⚠️ In production, `NEXT_PUBLIC_APP_URL` **must** be your real domain (e.g. `https://EVKA.example.com`) — payout email links are built from it. On Vercel it falls back to `VERCEL_URL` automatically if unset.
+> ⚠️ In production, `NEXT_PUBLIC_APP_URL` **must** be your real domain (e.g. `https://interviewloop.example.com`) — payout email links are built from it. On Vercel it falls back to `VERCEL_URL` automatically if unset.
 
 ### 3. Set up the database
 

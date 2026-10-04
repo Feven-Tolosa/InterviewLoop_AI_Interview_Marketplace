@@ -14,9 +14,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Terms of Service | EVKA',
+  title: 'Terms of Service | InterviewLoop',
   description:
-    'Terms and conditions for using the EVKA AI-powered mock interview marketplace.',
+    'Terms and conditions for using the InterviewLoop AI-powered mock interview marketplace.',
 }
 
 export default function TermsPage() {
@@ -55,10 +55,10 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              By accessing, registering, or using EVKA (&quot;the
+              By accessing, registering, or using InterviewLoop (&quot;the
               Platform&quot;), you agree to be bound by these Terms of Service.
               If you do not agree to all terms, you may not access or use the
-              Platform. Continued use of EVKA constitutes your acceptance of
+              Platform. Continued use of InterviewLoop constitutes your acceptance of
               these Terms.
             </p>
           </section>
@@ -77,7 +77,7 @@ export default function TermsPage() {
               You must meet applicable legal age requirements (at least 18 years
               of age or legal age of majority in your jurisdiction) to create an
               account, purchase credits, or offer mock interview services on
-              EVKA. By creating an account, you represent and warrant that you
+              InterviewLoop. By creating an account, you represent and warrant that you
               meet these eligibility requirements.
             </p>
           </section>
@@ -93,7 +93,7 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              Users may register on EVKA as either Candidates or Interviewers:
+              Users may register on InterviewLoop as either Candidates or Interviewers:
             </p>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4'>
               <div className='rounded-lg bg-muted/30 border border-border px-5 py-4'>
@@ -299,10 +299,10 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              The EVKA platform, branding, logos, design assets, and source code
-              are the exclusive property of EVKA. Users retain ownership of
+              The InterviewLoop platform, branding, logos, design assets, and source code
+              are the exclusive property of InterviewLoop. Users retain ownership of
               content they submit (such as profile details or custom questions)
-              while granting EVKA a non-exclusive license to process and display
+              while granting InterviewLoop a non-exclusive license to process and display
               such content to operate the service.
             </p>
           </section>
@@ -318,9 +318,9 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              EVKA is provided on an &quot;AS IS&quot; and &quot;AS
+              InterviewLoop is provided on an &quot;AS IS&quot; and &quot;AS
               AVAILABLE&quot; basis without warranties of any kind. To the
-              maximum extent permitted by law, EVKA is not liable for indirect,
+              maximum extent permitted by law, InterviewLoop is not liable for indirect,
               incidental, or consequential damages arising from your use of the
               platform.
             </p>
@@ -337,7 +337,7 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className='text-muted-foreground'>
-              EVKA reserves the right to suspend or terminate accounts that
+              InterviewLoop reserves the right to suspend or terminate accounts that
               violate these Terms, engage in fraud, or compromise security.
               Users may request account closure at any time through support.
             </p>
@@ -355,7 +355,7 @@ export default function TermsPage() {
             </div>
             <p className='text-muted-foreground'>
               We reserve the right to update these Terms of Service at any time.
-              Continued use of EVKA after changes are posted constitutes
+              Continued use of InterviewLoop after changes are posted constitutes
               acceptance of the updated Terms.
             </p>
           </section>
