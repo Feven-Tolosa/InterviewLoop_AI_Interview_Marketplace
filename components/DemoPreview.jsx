@@ -388,7 +388,7 @@ export default function DemoPreview() {
           gold='real interview prep'
         />
         <p className='text-muted-foreground mt-4 text-sm max-w-lg mx-auto leading-relaxed'>
-          Watch how EVKA combines expert-led mock interviews with AI-powered
+          Watch how InterviewLoop combines expert-led mock interviews with AI-powered
           tools to give you the edge in your next interview.
         </p>
       </div>
@@ -405,7 +405,7 @@ export default function DemoPreview() {
             <span className='w-2.5 h-2.5 rounded-full bg-[#28c840]' />
             <div className='ml-3 sm:ml-4 flex-1 max-w-xs h-6 rounded-md bg-muted/50 border border-border flex items-center px-3'>
               <span className='text-[10px] text-muted-foreground font-mono'>
-                EVKA.app/interview/session
+                interviewloop.app/interview/session
               </span>
             </div>
           </div>

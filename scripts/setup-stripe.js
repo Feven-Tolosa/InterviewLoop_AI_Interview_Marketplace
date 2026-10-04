@@ -46,7 +46,7 @@ async function main() {
       console.log(`Reusing existing ${plan.name} price ${price.id} ($${amount}/mo)`);
     } else {
       const product = await stripe.products.create({
-        name: `EVKA ${plan.name}`,
+        name: `InterviewLoop ${plan.name}`,
         metadata: { plan: plan.slug },
       });
 
